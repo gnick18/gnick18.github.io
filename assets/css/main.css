@@ -2612,6 +2612,21 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+	.image1 {
+		border-radius: 10em;
+		border: 0;
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+	}
+
+		.image1 img {		
+			width: 10em;
+			height: auto;
+			border-radius: 10em;
+			display: block;
+		}
+		
 
 /* List */
 
