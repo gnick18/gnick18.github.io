@@ -98,7 +98,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #312450;
+		background: #1f1f2d;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -1915,7 +1915,7 @@ input, select, textarea {
 		button.primary,
 		.button.primary {
 			background-color: #ffffff;
-			color: #312450 !important;
+			color: #570211 !important;
 		}
 
 			input[type="submit"].primary:after,
@@ -2356,7 +2356,7 @@ input, select, textarea {
 
 		select option {
 			color: #ffffff;
-			background: #312450;
+			background: #1f1f2d;
 		}
 
 		select:focus::-ms-value {
@@ -2444,7 +2444,7 @@ input, select, textarea {
 		input[type="radio"]:checked + label:before {
 			background: #ffffff;
 			border-color: #ffffff;
-			color: #b74e91;
+			color: #ffc057;
 			content: '\f00c';
 		}
 
@@ -2525,7 +2525,7 @@ input, select, textarea {
 			display: block;
 			background: #ffffff;
 			border-radius: 100%;
-			color: #312450;
+			color: #474834;
 			text-align: center;
 			line-height: 2.5em;
 			margin: 0 0 1.3em 0;
@@ -2536,27 +2536,27 @@ input, select, textarea {
 			}
 
 				.wrapper.style1 .icon.major:before {
-					color: #5e42a6;
+					color: #474834; 
 				}
 
 				.wrapper.style1-alt .icon.major:before {
-					color: #493382;
+					color: #8f8854;
 				}
 
 				.wrapper.style2 .icon.major:before {
-					color: #5052b5;
+					color: #ffc057;
 				}
 
 				.wrapper.style2-alt .icon.major:before {
-					color: #3e4094;
+					color: #fc9143;
 				}
 
 				.wrapper.style3 .icon.major:before {
-					color: #b74e91;
+					color: #d15515;
 				}
 
 				.wrapper.style3-alt .icon.major:before {
-					color: #953d75;
+					color: #923514;
 				}
 
 /* Image */
@@ -3251,31 +3251,31 @@ input, select, textarea {
 			}
 
 		.wrapper.alt {
-			background-color: #261c3e;
+			background-color: #361c0e;
 		}
 
 		.wrapper.style1 {
-			background-color: #5e42a6;
+			background-color: #032c4d;
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color: #361c0e;
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background-color: #004540;
 		}
 
 		.wrapper.style2-alt {
-			background-color: #3e4094;
+			background-color: #570211;
 		}
 
 		.wrapper.style3 {
-			background-color: #b74e91;
+			background-color: #7e3110;
 		}
 
 		.wrapper.style3-alt {
-			background-color: #953d75;
+			background-color: #360825;
 		}
 
 		.wrapper.fullscreen {
@@ -3385,7 +3385,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #5e42a6;
+		background-color: #004540;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
@@ -3539,7 +3539,7 @@ input, select, textarea {
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #312450;
+		background: #360825;
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3776,14 +3776,14 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:before {
-				background: #3c2c62;
+				background: #FADBEF;
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, #282828, #71787e);
+				background-image: -webkit-linear-gradient(to right, #282828, #71787e);
+				background-image: -ms-linear-gradient(to right, #282828, #71787e);
+				background-image: linear-gradient(to right, #282828, #71787e);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3872,7 +3872,7 @@ input, select, textarea {
 
 						#sidebar nav a:after {
 							background-image: none;
-							background-color: #b74e91;
+							background-color: #ffc057;
 						}
 
 		}
@@ -3889,14 +3889,15 @@ input, select, textarea {
 
 	#intro {
 		background-attachment: fixed;
+		background-color:#000000;
 		background-image: url("images/Background_Homepage.png");
 		background-position: top right;
 		background-repeat: no-repeat;
-		background-size: 100% 100%;
+		background-size: 100% auto;
 	}
 
 		#intro p {
-			font-size: 1.25em;
+			font-size: 1.3em;
 		}
 
 			@media screen and (max-width: 980px) {
