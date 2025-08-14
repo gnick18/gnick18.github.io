@@ -3037,7 +3037,7 @@ input, select, textarea {
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: rgba(49, 36, 80, 0.9);
+				background: #1f1f2d;
 				content: '';
 				display: block;
 				height: 100%;
@@ -3251,7 +3251,7 @@ input, select, textarea {
 			}
 
 		.wrapper.alt {
-			background-color: #361c0e;
+			background-color: #360825;
 		}
 
 		.wrapper.style1 {
@@ -3259,7 +3259,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1-alt {
-			background-color: #361c0e;
+			background-color: #360825;
 		}
 
 		.wrapper.style2 {
@@ -3527,8 +3527,8 @@ input, select, textarea {
 		}
 
 	#footer > .inner .menu {
-		font-size: 0.8em;
-		color: rgba(255, 255, 255, 0.15);
+		font-size: 1em;
+		color: rgba(255, 255, 255, 0.733);
 	}
 
 	#header + #wrapper + #footer > .inner {
