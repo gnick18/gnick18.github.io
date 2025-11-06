@@ -4041,6 +4041,26 @@ input, select, textarea {
 		opacity: 1;
 	}
 
+	/* Modal button styling */
+	.modal-footer .button:not(.primary) {
+		background-color: #ffffff;
+		color: #3498db !important;
+		border-color: #3498db !important;
+		transition: all 0.3s ease;
+	}
+	
+	.modal-footer .button:not(.primary):hover {
+		background-color: #3498db;
+		color: #ffffff !important;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+	}
+	
+	.modal-footer .button:not(.primary):active {
+		transform: translateY(0);
+		box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+	}
+
 	@media screen and (max-width: 736px) {
 		.modal-content {
 			width: 95%;
