@@ -98,7 +98,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #1f1f2d;
+		background: #f8f9fa;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -115,7 +115,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.55);
+		color: #2c3e50;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -151,18 +151,18 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
-		color: inherit;
+		border-bottom: dotted 1px rgba(52, 152, 219, 0.35);
+		color: #3498db;
 		text-decoration: none;
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #ffffff;
+			color: #2980b9;
 		}
 
 	strong, b {
-		color: #ffffff;
+		color: #2c3e50;
 		font-weight: bold;
 	}
 
@@ -175,7 +175,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		color: #2c3e50;
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -197,10 +197,10 @@ input, select, textarea {
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, #3498db, #2ecc71);
+				background-image: -webkit-linear-gradient(to right, #3498db, #2ecc71);
+				background-image: -ms-linear-gradient(to right, #3498db, #2ecc71);
+				background-image: linear-gradient(to right, #3498db, #2ecc71);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -275,7 +275,7 @@ input, select, textarea {
 	}
 
 	blockquote {
-		border-left: solid 4px rgba(255, 255, 255, 0.15);
+		border-left: solid 4px rgba(52, 152, 219, 0.3);
 		font-style: italic;
 		margin: 0 0 2em 0;
 		padding: 0.5em 0 0.5em 2em;
@@ -1833,9 +1833,9 @@ input, select, textarea {
 		transition: border-color 0.2s ease;
 		background-color: transparent;
 		border: solid 1px !important;
-		border-color: rgba(255, 255, 255, 0.15) !important;
+		border-color: #3498db !important;
 		border-radius: 3em;
-		color: #ffffff !important;
+		color: #3498db !important;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.6em;
@@ -1914,8 +1914,8 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #ffffff;
-			color: #570211 !important;
+			background-color: #3498db;
+			color: #ffffff !important;
 		}
 
 			input[type="submit"].primary:after,
@@ -1945,7 +1945,7 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: rgba(255, 255, 255, 0.55) !important;
+			border-color: #2980b9 !important;
 		}
 
 			input[type="submit"]:hover:after,
@@ -3251,31 +3251,31 @@ input, select, textarea {
 			}
 
 		.wrapper.alt {
-			background-color: #360825;
+			background-color: #ecf0f1;
 		}
 
 		.wrapper.style1 {
-			background-color: #032c4d;
+			background-color: #ffffff;
 		}
 
 		.wrapper.style1-alt {
-			background-color: #360825;
+			background-color: #f8f9fa;
 		}
 
 		.wrapper.style2 {
-			background-color: #004540;
+			background-color: #e8f4f8;
 		}
 
 		.wrapper.style2-alt {
-			background-color: #570211;
+			background-color: #fff5e6;
 		}
 
 		.wrapper.style3 {
-			background-color: #7e3110;
+			background-color: #f0f8f0;
 		}
 
 		.wrapper.style3-alt {
-			background-color: #360825;
+			background-color: #fef5e7;
 		}
 
 		.wrapper.fullscreen {
@@ -3385,14 +3385,14 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #004540;
+		background-color: #34495e;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
 
 		#header > .title {
 			border: 0;
-			color: #ffffff;
+			color: #ecf0f1;
 			display: block;
 			font-size: 1.25em;
 			font-weight: bold;
@@ -3424,7 +3424,7 @@ input, select, textarea {
 
 					#header > nav > ul > li a {
 						border: 0;
-						color: rgba(255, 255, 255, 0.35);
+						color: rgba(236, 240, 241, 0.7);
 						display: inline-block;
 						font-size: 0.6em;
 						font-weight: bold;
@@ -3433,11 +3433,11 @@ input, select, textarea {
 					}
 
 						#header > nav > ul > li a:hover {
-							color: rgba(255, 255, 255, 0.55);
+							color: rgba(236, 240, 241, 0.9);
 						}
 
 						#header > nav > ul > li a.active {
-							color: #ffffff;
+							color: #ecf0f1;
 						}
 
 		@media screen and (max-width: 736px) {
@@ -3539,7 +3539,7 @@ input, select, textarea {
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #360825;
+		background: #2c3e50;
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3752,7 +3752,7 @@ input, select, textarea {
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: rgba(255, 255, 255, 0.35);
+			color: rgba(236, 240, 241, 0.7);
 			display: block;
 			font-size: 0.6em;
 			font-weight: bold;
@@ -3776,14 +3776,14 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:before {
-				background: #FADBEF;
+				background: #ecf0f1;
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #282828, #71787e);
-				background-image: -webkit-linear-gradient(to right, #282828, #71787e);
-				background-image: -ms-linear-gradient(to right, #282828, #71787e);
-				background-image: linear-gradient(to right, #282828, #71787e);
+				background-image: -moz-linear-gradient(to right, #3498db, #2ecc71);
+				background-image: -webkit-linear-gradient(to right, #3498db, #2ecc71);
+				background-image: -ms-linear-gradient(to right, #3498db, #2ecc71);
+				background-image: linear-gradient(to right, #3498db, #2ecc71);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3792,11 +3792,11 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:hover {
-				color: rgba(255, 255, 255, 0.55);
+				color: rgba(236, 240, 241, 0.9);
 			}
 
 			#sidebar nav a.active {
-				color: #ffffff;
+				color: #ecf0f1;
 			}
 
 				#sidebar nav a.active:after {
@@ -3889,16 +3889,155 @@ input, select, textarea {
 
 	#intro {
 		background-attachment: fixed;
-		background-color:#000000;
-		background-image: url("images/Background_Homepage.png");
-		background-position: top right;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background-position: center center;
 		background-repeat: no-repeat;
-		background-size: 100% auto;
+		background-size: cover;
+		color: #ffffff;
+	}
+	
+	#intro h1, #intro p, #intro a {
+		color: #ffffff !important;
+	}
+	
+	#intro a {
+		border-bottom-color: rgba(255, 255, 255, 0.35);
+	}
+	
+	#intro a:hover {
+		border-bottom-color: transparent;
 	}
 
 		#intro p {
 			font-size: 1.3em;
 		}
+
+/* Modal Styles */
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 10001;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.7);
+		animation: fadeIn 0.3s ease;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	.modal-content {
+		background-color: #ffffff;
+		margin: 5% auto;
+		padding: 0;
+		border-radius: 0.5em;
+		width: 85%;
+		max-width: 900px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+		animation: slideIn 0.3s ease;
+		max-height: 85vh;
+		overflow-y: auto;
+	}
+
+	@keyframes slideIn {
+		from {
+			transform: translateY(-50px);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	.modal-header {
+		padding: 2em 2.5em 1em 2.5em;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: #ffffff;
+		border-radius: 0.5em 0.5em 0 0;
+	}
+
+	.modal-header h2 {
+		color: #ffffff;
+		margin: 0 0 0.5em 0;
+		font-size: 1.5em;
+	}
+
+	.modal-header .status {
+		font-style: italic;
+		opacity: 0.9;
+		font-size: 0.9em;
+	}
+
+	.modal-body {
+		padding: 2em 2.5em;
+		color: #2c3e50;
+		line-height: 1.8;
+	}
+
+	.modal-body img {
+		width: 100%;
+		height: auto;
+		border-radius: 0.25em;
+		margin: 1.5em 0;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.modal-body h3 {
+		color: #3498db;
+		margin-top: 1.5em;
+		margin-bottom: 0.5em;
+	}
+
+	.modal-body p {
+		margin-bottom: 1em;
+	}
+
+	.modal-footer {
+		padding: 1.5em 2.5em 2em 2.5em;
+		background-color: #f8f9fa;
+		border-radius: 0 0 0.5em 0.5em;
+		text-align: center;
+	}
+
+	.close {
+		color: #ffffff;
+		float: right;
+		font-size: 2em;
+		font-weight: bold;
+		line-height: 0.8;
+		cursor: pointer;
+		opacity: 0.8;
+		transition: opacity 0.2s ease;
+	}
+
+	.close:hover,
+	.close:focus {
+		opacity: 1;
+	}
+
+	@media screen and (max-width: 736px) {
+		.modal-content {
+			width: 95%;
+			margin: 10% auto;
+			max-height: 80vh;
+		}
+
+		.modal-header,
+		.modal-body,
+		.modal-footer {
+			padding: 1.5em;
+		}
+
+		.modal-header h2 {
+			font-size: 1.2em;
+		}
+	}
 
 			@media screen and (max-width: 980px) {
 
