@@ -12,6 +12,140 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
+		<style>
+			/* Pedigree Card Styles */
+			.pedigree-card {
+				color: #333 !important;
+			}
+			.pedigree-card h3,
+			.pedigree-card h4 {
+				color: #2c3e50 !important;
+			}
+			.pedigree-card p {
+				color: #333 !important;
+			}
+			.pedigree-card a {
+				color: #2980b9 !important;
+			}
+			.pedigree-card a:hover {
+				color: #3498db !important;
+			}
+			.pedigree-card em {
+				color: #555 !important;
+			}
+
+			/* Image Banner Carousel Styles */
+			.image-banner {
+				width: 100%;
+				overflow: hidden;
+				background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+				padding: 1.5em 0;
+				margin-bottom: 0;
+			}
+
+			.banner-track {
+				display: flex;
+				gap: 1em;
+				animation: bannerScroll 40s linear infinite;
+				width: max-content;
+			}
+
+			.banner-track:hover {
+				animation-play-state: paused;
+			}
+
+			.banner-track img {
+				height: 180px;
+				width: auto;
+				max-width: none;
+				object-fit: cover;
+				border-radius: 8px;
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+				flex-shrink: 0;
+				transition: transform 0.3s ease;
+			}
+
+			.banner-track img:hover {
+				transform: scale(1.05);
+			}
+
+			@keyframes bannerScroll {
+				0% { transform: translateX(0); }
+				100% { transform: translateX(-50%); }
+			}
+
+			/* Responsive adjustments */
+			@media screen and (max-width: 768px) {
+				.banner-track img {
+					height: 120px;
+				}
+				.image-banner {
+					padding: 0.5em 0;
+				}
+			}
+
+			/* Lightbox Styles */
+			.lightbox-overlay {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.9);
+				display: none;
+				justify-content: center;
+				align-items: center;
+				z-index: 10000;
+				cursor: pointer;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+
+			.lightbox-overlay.active {
+				display: flex;
+				opacity: 1;
+			}
+
+			.lightbox-content {
+				position: relative;
+				max-width: 90%;
+				max-height: 90%;
+				transform: scale(0.8);
+				transition: transform 0.3s ease;
+			}
+
+			.lightbox-overlay.active .lightbox-content {
+				transform: scale(1);
+			}
+
+			.lightbox-content img {
+				max-width: 100%;
+				max-height: 85vh;
+				object-fit: contain;
+				border-radius: 8px;
+				box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+			}
+
+			.lightbox-close {
+				position: absolute;
+				top: -40px;
+				right: 0;
+				color: white;
+				font-size: 2em;
+				cursor: pointer;
+				transition: transform 0.2s ease;
+			}
+
+			.lightbox-close:hover {
+				transform: scale(1.2);
+			}
+
+			/* Make banner images clickable */
+			.banner-track img {
+				cursor: pointer;
+			}
+		</style>
+		
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-29TB4N1565"></script>
 		<script>
@@ -40,19 +174,61 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
+				<!-- Science Photo Banner - Top of Page -->
+				<div class="image-banner">
+					<div class="banner-track" id="banner-track">
+						<!-- Images loaded dynamically from manifest.json -->
+					</div>
+				</div>
+
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<div style="text-align: center; margin-bottom: 2em;">
-								<img src="images/grant_nickles.png" alt="Headshot of Grant Nickles" style="border-radius: 50%; width: 300px; height: 300px; object-fit: cover; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); margin-bottom: 1.5em;" />
-								<h1 style="margin-bottom: 0.5em;">Grant R. Nickles, PhD</h1>
-								<p style="font-size: 1em; margin-bottom: 0.5em;">UW Distinguished Research Fellow <br>
-									<a href="https://rise.wisc.edu/" target="_blank">Wisconsin Research, Innovation and Scholarly Excellence (RISE) AI</a>
-								</p>
-								<p style="font-size: 1em; margin-bottom: 0;"><a href="https://cals.wisc.edu/" target="_blank">College of Agriculture and Life Sciences <br> at The University of Wisconsin-Madison</a>
-								</p>
+							<div class="row" style="align-items: center; margin-bottom: 2em;">
+								<!-- Profile Image and Info - Left Side -->
+								<div class="col-5" style="text-align: center;">
+									<img src="images/grant_nickles.png" alt="Headshot of Grant Nickles" style="border-radius: 50%; width: 280px; height: 280px; object-fit: cover; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); margin-bottom: 1.5em;" />
+									<h1 style="margin-bottom: 0.5em;">Grant R. Nickles, PhD</h1>
+									<p style="font-size: 1em; margin-bottom: 0.5em;">UW Distinguished Research Fellow <br>
+										<a href="https://rise.wisc.edu/" target="_blank">Wisconsin Research, Innovation and Scholarly Excellence (RISE) AI</a>
+									</p>
+									<p style="font-size: 1em; margin-bottom: 0;"><a href="https://cals.wisc.edu/" target="_blank">College of Agriculture and Life Sciences <br> at The University of Wisconsin-Madison</a>
+									</p>
+								</div>
+								<!-- Academic Pedigree Card - Right Side -->
+								<div class="col-7">
+									<div class="pedigree-card" style="background: rgba(255, 255, 255, 0.98); border-radius: 12px; padding: 2em; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); border: 1px solid rgba(0, 0, 0, 0.08);">
+										<h3 class="pedigree-title" style="margin-top: 0; margin-bottom: 1.2em; font-size: 1.4em; color: #2c3e50 !important; border-bottom: 2px solid #3498db; padding-bottom: 0.5em;">
+											<i class="fas fa-graduation-cap" style="margin-right: 0.5em;"></i>Academic Pedigree
+										</h3>
+										
+										<!-- Postdoc -->
+										<div style="margin-bottom: 1.5em; padding-left: 1.2em; border-left: 3px solid #3498db;">
+											<h4 class="pedigree-heading" style="margin: 0 0 0.4em 0; font-size: 1.1em; color: #2c3e50 !important;">Postdoc</h4>
+											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 1em; font-weight: 600; color: #34495e !important;">University of Wisconsin-Madison</p>
+											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 0.95em; color: #7f8c8d !important;">2025-Present</p>
+											<p class="pedigree-text" style="margin: 0; font-size: 0.95em; color: #333 !important;">Research under <a href="https://fungi.cals.wisc.edu/" target="_blank" style="color: #2980b9 !important;">Dr. Emile Gluck-Thaler</a><br><em style="color: #555 !important;">Fungal Interactions Lab</em></p>
+										</div>
+										
+										<!-- PhD -->
+										<div style="margin-bottom: 1.5em; padding-left: 1.2em; border-left: 3px solid #9b59b6;">
+											<h4 class="pedigree-heading" style="margin: 0 0 0.4em 0; font-size: 1.1em; color: #2c3e50 !important;">M.S. & Ph.D.</h4>
+											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 1em; font-weight: 600; color: #34495e !important;">University of Wisconsin-Madison</p>
+											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 0.95em; color: #7f8c8d !important;">2020-2025</p>
+											<p class="pedigree-text" style="margin: 0; font-size: 0.95em; color: #333 !important;">Research under <a href="https://sites.google.com/view/kellerlabuw/keller-lab-home" target="_blank" style="color: #2980b9 !important;">Dr. Nancy P. Keller</a></p>
+										</div>
+										
+										<!-- BS -->
+										<div style="padding-left: 1.2em; border-left: 3px solid #e74c3c;">
+											<h4 class="pedigree-heading" style="margin: 0 0 0.4em 0; font-size: 1.1em; color: #2c3e50 !important;">B.S.</h4>
+											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 1em; font-weight: 600; color: #34495e !important;">Iowa State University</p>
+											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 0.95em; color: #7f8c8d !important;">2016-2020</p>
+											<p class="pedigree-text" style="margin: 0; font-size: 0.95em; color: #333 !important;">Research under <a href="https://www.maize-surface-lipids.gdcb.iastate.edu/" target="_blank" style="color: #2980b9 !important;">Dr. Marna Yandeau-Nelson</a></p>
+										</div>
+									</div>
+								</div>
 							</div>
-							<ul class="actions">
+							<ul class="actions" style="text-align: center;">
 								<li><a href="#one" class="button primary scrolly">Learn more</a></li>
 							</ul>
 						</div>
@@ -184,6 +360,14 @@
 				</div>
 			</footer>
 
+		<!-- Lightbox for Banner Images -->
+		<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+			<div class="lightbox-content" onclick="event.stopPropagation()">
+				<span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+				<img id="lightbox-img" src="" alt="Enlarged science photo">
+			</div>
+		</div>
+
 		<!-- Modal 1: ICS Paper -->
 		<div id="modal1" class="modal">
 			<div class="modal-content">
@@ -263,6 +447,72 @@
 					document.body.style.overflow = "auto";
 				}
 			}
+
+			// Lightbox functions for banner images
+			function openLightbox(imgSrc) {
+				var lightbox = document.getElementById('lightbox');
+				var lightboxImg = document.getElementById('lightbox-img');
+				lightboxImg.src = imgSrc;
+				lightbox.classList.add('active');
+				document.body.style.overflow = 'hidden';
+			}
+
+			function closeLightbox() {
+				var lightbox = document.getElementById('lightbox');
+				lightbox.classList.remove('active');
+				document.body.style.overflow = 'auto';
+			}
+
+			// Load banner images from manifest.json
+			function loadBannerImages() {
+				var bannerTrack = document.getElementById('banner-track');
+				
+				fetch('images/pinwheel/manifest.json')
+					.then(function(response) {
+						return response.json();
+					})
+					.then(function(data) {
+						var images = data.images;
+						var basePath = 'images/pinwheel/';
+						
+						// Add original images
+						images.forEach(function(imageName) {
+							var img = document.createElement('img');
+							img.src = basePath + imageName;
+							img.alt = 'Science photo';
+							img.addEventListener('click', function() {
+								openLightbox(this.src);
+							});
+							bannerTrack.appendChild(img);
+						});
+						
+						// Add duplicate set for seamless infinite scroll
+						images.forEach(function(imageName) {
+							var img = document.createElement('img');
+							img.src = basePath + imageName;
+							img.alt = 'Science photo';
+							img.addEventListener('click', function() {
+								openLightbox(this.src);
+							});
+							bannerTrack.appendChild(img);
+						});
+					})
+					.catch(function(error) {
+						console.log('Error loading banner images:', error);
+					});
+			}
+
+			// Initialize on page load
+			document.addEventListener('DOMContentLoaded', function() {
+				loadBannerImages();
+
+				// Close lightbox with Escape key
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Escape') {
+						closeLightbox();
+					}
+				});
+			});
 		</script>
 
 		<!-- Scripts -->
