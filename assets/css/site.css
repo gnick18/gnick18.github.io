@@ -531,4 +531,6 @@ section.tight { padding: 4rem 0; }
 	.hero-photo { width: 220px; height: 220px; }
 	.pub { grid-template-columns: 1fr; gap: .5rem; }
 	.pub .yr { padding-top: 0; }
+	.social-row { gap: .4rem; }
+	.social-row a { width: 38px; height: 38px; font-size: 1rem; }
 }
