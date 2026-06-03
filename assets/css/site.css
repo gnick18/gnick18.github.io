@@ -339,9 +339,8 @@ section.tight { padding: 4rem 0; }
 
 /* Initiative (Aspergillus) */
 .initiative {
-	display: grid; grid-template-columns: 180px 1fr; gap: 2.4rem; align-items: center;
-	background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-	padding: 2.4rem; box-shadow: var(--shadow-sm); margin-top: 2rem;
+	display: grid; grid-template-columns: 160px 1fr; gap: 2.4rem; align-items: center;
+	margin-top: 1.8rem;
 }
 .initiative img.logo { width: 100%; height: auto; }
 .initiative p { color: var(--ink-soft); }
@@ -515,8 +514,8 @@ section.tight { padding: 4rem 0; }
 	.hero-actions, .social-row { justify-content: center; }
 	.about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 	.paper-grid { grid-template-columns: 1fr; }
-	.initiative { grid-template-columns: 1fr; text-align: center; }
-	.initiative img.logo { max-width: 150px; margin: 0 auto; }
+	.initiative { grid-template-columns: 1fr; gap: 1.4rem; }
+	.initiative img.logo { max-width: 130px; }
 	.contact-grid { grid-template-columns: 1fr; }
 }
 
