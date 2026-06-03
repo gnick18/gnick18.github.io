@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Office temp/lock files
+~$*
+
+# Editor/preview
+.claude/launch.json

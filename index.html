@@ -1,528 +1,442 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
-	Grant R. Nickles, PhD
-	Created using the free basesite Hyperspace by HTML5 UP (https://html5up.net/)
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Dr. Grant R. Nickles, personal website
+	Redesigned 2026 · light + nature/fungal palette · Fraunces + Inter
+	Hand-authored (no template framework). Icons: Font Awesome.
 -->
-<html>
-	<head>
-		<title>Dr. Grant R. Nickles</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		
-		<style>
-			/* Pedigree Card Styles */
-			.pedigree-card {
-				color: #333 !important;
-			}
-			.pedigree-card h3,
-			.pedigree-card h4 {
-				color: #2c3e50 !important;
-			}
-			.pedigree-card p {
-				color: #333 !important;
-			}
-			.pedigree-card a {
-				color: #2980b9 !important;
-			}
-			.pedigree-card a:hover {
-				color: #3498db !important;
-			}
-			.pedigree-card em {
-				color: #555 !important;
-			}
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Dr. Grant R. Nickles | Fungal Chemical Ecology and Evolution</title>
+	<meta name="description" content="Dr. Grant R. Nickles, UW Distinguished Research Fellow at the University of Wisconsin–Madison, working in fungal chemical ecology and evolution." />
 
-			/* Image Banner Carousel Styles */
-			.image-banner {
-				width: 100%;
-				overflow: hidden;
-				background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-				padding: 1.5em 0;
-				margin-bottom: 0;
-			}
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-			.banner-track {
-				display: flex;
-				gap: 1em;
-				animation: bannerScroll 40s linear infinite;
-				width: max-content;
-			}
+	<!-- Icons + styles -->
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+	<link rel="stylesheet" href="assets/css/site.css" />
 
-			.banner-track:hover {
-				animation-play-state: paused;
-			}
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-29TB4N1565"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-29TB4N1565');
+	</script>
+</head>
+<body>
 
-			.banner-track img {
-				height: 180px;
-				width: auto;
-				max-width: none;
-				object-fit: cover;
-				border-radius: 8px;
-				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-				flex-shrink: 0;
-				transition: transform 0.3s ease;
-			}
+	<!-- ===================== Navigation ===================== -->
+	<header class="nav" id="nav">
+		<div class="nav-inner">
+			<a href="#home" class="brand">Grant R. Nickles<span>, PhD</span></a>
+			<button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+			<ul class="nav-links" id="navLinks">
+				<li><a href="#about">About</a></li>
+				<li><a href="#research">Research</a></li>
+				<li><a href="#tools">Tools</a></li>
+				<li><a href="#publications">Publications</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="images/GrantN_CV_Nov2025.pdf" target="_blank" class="nav-cv">CV</a></li>
+			</ul>
+		</div>
+	</header>
 
-			.banner-track img:hover {
-				transform: scale(1.05);
-			}
-
-			@keyframes bannerScroll {
-				0% { transform: translateX(0); }
-				100% { transform: translateX(-50%); }
-			}
-
-			/* Responsive adjustments */
-			@media screen and (max-width: 768px) {
-				.banner-track img {
-					height: 120px;
-				}
-				.image-banner {
-					padding: 0.5em 0;
-				}
-			}
-
-			/* Lightbox Styles */
-			.lightbox-overlay {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background: rgba(0, 0, 0, 0.9);
-				display: none;
-				justify-content: center;
-				align-items: center;
-				z-index: 10000;
-				cursor: pointer;
-				opacity: 0;
-				transition: opacity 0.3s ease;
-			}
-
-			.lightbox-overlay.active {
-				display: flex;
-				opacity: 1;
-			}
-
-			.lightbox-content {
-				position: relative;
-				max-width: 90%;
-				max-height: 90%;
-				transform: scale(0.8);
-				transition: transform 0.3s ease;
-			}
-
-			.lightbox-overlay.active .lightbox-content {
-				transform: scale(1);
-			}
-
-			.lightbox-content img {
-				max-width: 100%;
-				max-height: 85vh;
-				object-fit: contain;
-				border-radius: 8px;
-				box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
-			}
-
-			.lightbox-close {
-				position: absolute;
-				top: -40px;
-				right: 0;
-				color: white;
-				font-size: 2em;
-				cursor: pointer;
-				transition: transform 0.2s ease;
-			}
-
-			.lightbox-close:hover {
-				transform: scale(1.2);
-			}
-
-			/* Make banner images clickable */
-			.banner-track img {
-				cursor: pointer;
-			}
-		</style>
-		
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-29TB4N1565"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'G-29TB4N1565');
-		</script>
-	</head>
-	<body class="is-preload">
-
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Home</a></li>
-							<li><a href="#one">Research Projects</a></li>
-							<li><a href="#two">Contact</a></li>
-						</ul>
-					</nav>
+	<!-- ===================== Hero ===================== -->
+	<section class="hero" id="home">
+		<div class="wrap hero-grid">
+			<div>
+				<img class="hero-photo" src="images/grant_nickles.png" alt="Portrait of Dr. Grant R. Nickles" />
+			</div>
+			<div>
+				<p class="eyebrow">Fungal Chemical Ecology and Evolution</p>
+				<h1>Grant R. Nickles, PhD</h1>
+				<p class="role">UW Distinguished Research Fellow</p>
+				<p class="lede">I study the chemical ecology and evolution of fungi: how the molecules they make shape their interactions, and how that chemistry is encoded and evolves across fungal genomes. Much of my work centers on non-canonical specialized metabolism, the chemistry that conventional genome mining tends to miss, in the fungi most researchers overlook.</p>
+				<p class="affil">
+					<a href="https://rise.wisc.edu/" target="_blank" rel="noopener">Wisconsin RISE&nbsp;AI</a> ·
+					<a href="https://cals.wisc.edu/" target="_blank" rel="noopener">College of Agricultural &amp; Life Sciences</a>,
+					University of Wisconsin–Madison
+				</p>
+				<div class="hero-actions">
+					<a href="#research" class="btn btn-primary"><i class="fas fa-microscope"></i> Explore research</a>
+					<a href="#contact" class="btn btn-ghost"><i class="fas fa-envelope"></i> Get in touch</a>
 				</div>
-			</section>
+				<div class="social-row">
+					<a href="https://scholar.google.com/citations?user=rayavZUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+					<a href="https://orcid.org/0000-0002-0234-8049" target="_blank" rel="noopener" title="ORCID"><i class="fab fa-orcid"></i></a>
+					<a href="https://github.com/gnick18" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+					<a href="https://www.linkedin.com/in/grant-nickles/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+					<a href="https://www.researchgate.net/profile/Grant_Nickles" target="_blank" rel="noopener" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+					<a href="https://bsky.app/profile/grantnickles.bsky.social" target="_blank" rel="noopener" title="Bluesky"><i class="fas fa-cloud"></i></a>
+				</div>
+			</div>
+		</div>
+	</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<!-- ===================== Photo band ===================== -->
+	<div class="photo-band" aria-label="Photos from the field and lab">
+		<div class="band-track" id="bandTrack"><!-- populated from manifest.json --></div>
+	</div>
 
-				<!-- Science Photo Banner - Top of Page -->
-				<div class="image-banner">
-					<div class="banner-track" id="banner-track">
-						<!-- Images loaded dynamically from manifest.json -->
+	<!-- ===================== About ===================== -->
+	<section id="about">
+		<div class="wrap">
+			<div class="section-head">
+				<p class="eyebrow">About</p>
+				<h2>Research interests</h2>
+			</div>
+			<div class="about-grid">
+				<div class="about-prose">
+					<p>I am interested in non-canonical fungal specialized metabolism, which to me broadly encompasses two ideas. The first is natural products whose genetic basis is poorly understood or unpredictable by conventional genome mining. The second is taxa that natural-product researchers have conventionally understudied or ignored, such as Basidiomycetes and lichens.</p>
+					<p>My work in this space is deliberately diverse. It combines computational genome mining and molecular evolution with chemical analysis in the lab. The common goal across these projects is to use understudied fungal lineages and overlooked chemistry to define new specialized-metabolism lineages and improve how we understand biosynthesis across the fungal kingdom.</p>
+					<p>I am always open to new collaborations on fungal natural product biosynthesis and evolution, so please <a href="#contact">get in touch</a>.</p>
+				</div>
+				<aside class="timeline-card">
+					<h3><i class="fas fa-graduation-cap"></i> Academic background</h3>
+					<div class="tl-item">
+						<div class="tl-stage">Postdoctoral Research Fellow</div>
+						<div class="tl-years">2025 – Present</div>
+						<div class="tl-org">University of Wisconsin–Madison</div>
+						<div class="tl-advisor">w/ <a href="https://fungi.cals.wisc.edu/" target="_blank" rel="noopener">Dr. Emile Gluck-Thaler</a> · <em>Fungal Interactions Lab</em></div>
+					</div>
+					<div class="tl-item gold">
+						<div class="tl-stage">M.S. &amp; Ph.D.</div>
+						<div class="tl-years">2020 – 2025</div>
+						<div class="tl-org">University of Wisconsin–Madison</div>
+						<div class="tl-advisor">w/ <a href="https://sites.google.com/view/kellerlabuw/keller-lab-home" target="_blank" rel="noopener">Dr. Nancy P. Keller</a></div>
+					</div>
+					<div class="tl-item rust">
+						<div class="tl-stage">B.S.</div>
+						<div class="tl-years">2016 – 2020</div>
+						<div class="tl-org">Iowa State University</div>
+						<div class="tl-advisor">w/ <a href="https://www.maize-surface-lipids.gdcb.iastate.edu/" target="_blank" rel="noopener">Dr. Marna Yandeau-Nelson</a></div>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===================== Research ===================== -->
+	<section id="research" class="section-alt">
+		<div class="wrap">
+			<div class="section-head">
+				<p class="eyebrow">Research</p>
+				<h2>Research projects</h2>
+				<p>My research spans several connected projects in fungal specialized metabolism. The main threads are described below.</p>
+			</div>
+
+			<!-- Theme 1 -->
+			<div class="theme reveal">
+				<div class="wrap" style="padding:0;">
+					<span class="theme-num">01</span>
+					<h3>The evolution &amp; genomic architecture of non-canonical fungal specialized metabolism</h3>
+					<p class="theme-intro">Mapping natural products that are invisible to conventional genome mining, found in lineages such as Basidiomycetes and lichens that natural-product researchers have long passed over.</p>
+				</div>
+				<div class="paper-rows">
+					<!-- Paper 1: ICS -->
+					<article class="paper-row">
+						<div class="paper-fig" onclick="openLightbox('images/ICSOnTree_Final.png')"><img src="images/ICSOnTree_Final.png" alt="Isocyanide synthase gene clusters mapped onto a fungal phylogeny" /></div>
+						<div class="paper-body">
+							<span class="badge badge-pub">Published · Nucleic Acids Research</span>
+							<h4>Mining for a new class of fungal natural products</h4>
+							<p>The first large-scale characterization of isocyanide synthase (ICS) biosynthetic gene clusters, a class of fungal natural products previously invisible to conventional genome mining. My pipeline located over 3,800 ICS clusters, ranking them the fifth-largest class of fungal specialized metabolites. The antiSMASH team later built ICS detection into version 7.1 of their genome-mining tool.</p>
+							<div class="row-tags">
+								<a class="tag-doi" href="https://doi.org/10.1093/nar/gkad573" target="_blank" rel="noopener">DOI: 10.1093/nar/gkad573</a>
+								<a class="tag-pdf" href="paper_pdfs/gkad573.pdf" target="_blank">PDF</a>
+							</div>
+						</div>
+					</article>
+					<!-- Paper 2: lichen -->
+					<article class="paper-row reverse">
+						<div class="paper-fig" onclick="openLightbox('images/ProposedEvolutionaryNRPSSteps.png')"><img src="images/ProposedEvolutionaryNRPSSteps.png" alt="Proposed evolutionary steps of an isocyanide megasynthase" /></div>
+						<div class="paper-body">
+							<span class="badge badge-press">In press · Current Biology</span>
+							<h4>Stepwise evolution of a fungal mega-synthase, told through lichen genomes</h4>
+							<p>An unusual split version of the antibiotic-producing CrmA isocyanide mega-synthase, found in lichen genomes, where the ICS and NRPS domains are encoded by two separate genes. I traced the split pathway across a wide range of fungi and back to a duplication of a canonical NRPS-like gene family, showing how understudied lineages can reveal entirely new specialized-metabolism pathways.</p>
+							<div class="row-tags">
+								<span class="tag-status">In press</span>
+								<a class="tag-pdf" href="paper_pdfs/ssrn-5371150.pdf" target="_blank">Preprint PDF</a>
+							</div>
+						</div>
+					</article>
+					<!-- Paper 3: Amanita -->
+					<article class="paper-row">
+						<div class="paper-fig" onclick="openLightbox('images/Figure4.png')"><img src="images/Figure4.png" alt="Amanita muscaria genomes and metabolomes figure" /></div>
+						<div class="paper-body">
+							<span class="badge badge-pub">Published · New Phytologist</span>
+							<h4>The invasion of <em>Amanita muscaria</em> in South Africa</h4>
+							<p>Born from an NSF-funded workshop in Pretoria, this study sequenced 24 Northern and Southern Hemisphere fly agarics to reconstruct the South African history of <em>Amanita muscaria</em>. I analyzed the specialized metabolomes by genome mining and LC-MS/MS, and led bioactivity testing of extracts against eight organisms, showing the European chemistry is conserved in its novel range.</p>
+							<div class="row-tags">
+								<a class="tag-doi" href="https://doi.org/10.1111/nph.71064" target="_blank" rel="noopener">DOI: 10.1111/nph.71064</a>
+								<a class="tag-pdf" href="paper_pdfs/Nickles_2026_Amanita_muscaria_NewPhytologist.pdf" target="_blank">PDF</a>
+								<span class="tag-oa">Open Access</span>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+
+			<!-- Theme 2 -->
+			<div class="theme reveal">
+				<div class="wrap" style="padding:0;">
+					<span class="theme-num">02</span>
+					<h3>The <em>Aspergillus fumigatus</em> Af293/CEA10 Community Sequencing Initiative</h3>
+				</div>
+				<div class="initiative">
+					<img class="logo" src="images/logo.png" alt="Aspergillus fumigatus Community Sequencing Initiative logo" />
+					<div>
+						<p>The model pathogen <em>A. fumigatus</em> (strains Af293 and CEA10) has been studied for decades. Because these strains were cultured independently in labs across the globe, they have accumulated unique, unstudied mutations. This "lab-to-lab" evolution makes it hard to compare findings on physiology, pathogenicity, and genetics across labs.</p>
+						<p>While community sequencing is common for other model organisms (<em>Arabidopsis</em>, <em>S.&nbsp;cerevisiae</em>, various bacteria), this is the first effort of its kind for a filamentous fungus. I launched the initiative with Drs. Amelia Barber, Emile Gluck-Thaler, and Dante Calise to build a foundational genomic resource for the entire <em>Aspergillus</em> community.</p>
+						<a href="https://asp-fumi-seq-project-2025.vercel.app/" target="_blank" rel="noopener" class="btn btn-gold"><i class="fas fa-external-link-alt"></i> Visit the initiative</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Theme 3: Starships / mobile elements -->
+			<div class="theme reveal">
+				<div class="wrap" style="padding:0;">
+					<span class="theme-num">03</span>
+					<h3>Mobile elements and the evolution of fungal specialized metabolism</h3>
+					<p class="theme-intro">Starships are among the largest known mobile genetic elements in fungi and a research focus of my advisor, <a href="https://fungi.cals.wisc.edu/" target="_blank" rel="noopener">Dr. Emile Gluck-Thaler</a>. Working with him, I study how these elements move across genomes and carry biosynthetic and regulatory machinery with them.</p>
+				</div>
+				<div class="subprojects">
+					<div class="subproject">
+						<span class="sp-label"><i class="fas fa-globe-americas"></i> Fungal-kingdom-wide</span>
+						<h4>Starships and biosynthetic gene clusters</h4>
+						<p>A fungal-kingdom-wide analysis of Starships and their role in the evolution, diversity, and distribution of biosynthetic gene clusters.</p>
+						<p class="collab">In collaboration with the Marnix Medema lab, one of the largest natural-product genome-mining groups, and <a href="https://sites.google.com/view/kellerlabuw/keller-lab-home" target="_blank" rel="noopener">Dr. Nancy Keller</a>.</p>
+					</div>
+					<div class="subproject">
+						<span class="sp-label"><i class="fas fa-sliders-h"></i> Gene regulation</span>
+						<h4>Starships and host gene regulation</h4>
+						<p>An investigation of what happens after a Starship inserts into a new genome, focusing on how the genes it carries integrate into the host's existing transcriptional regulation.</p>
+						<p class="collab">In collaboration with <a href="https://sites.google.com/view/kellerlabuw/keller-lab-home" target="_blank" rel="noopener">Dr. Nancy Keller</a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===================== Tools & Software ===================== -->
+	<section id="tools">
+		<div class="wrap">
+			<div class="section-head">
+				<p class="eyebrow">Tools &amp; Software</p>
+				<h2>Resources I have built</h2>
+				<p>Open tools and databases that come out of my research and are free for the community to use.</p>
+			</div>
+			<div class="tools-grid">
+				<div class="tool-card">
+					<span class="tool-icon"><i class="fas fa-flask"></i></span>
+					<div class="tool-meta">Web app · Beta</div>
+					<h3>ResearchOS</h3>
+					<p>I built ResearchOS, a free and open-source application that helps academic labs keep their projects, protocols, notes, tasks, and sequence data organized in one place. It runs locally in your browser against your own data folder, so your research stays on your own machine, and it includes a built-in molecular sequence editor and common lab calculators.</p>
+					<div class="tool-foot">
+						<a href="https://research-os.app/" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Open ResearchOS</a>
+						<a href="https://github.com/gnick18/ResearchOS" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fab fa-github"></i> Source code</a>
+					</div>
+				</div>
+				<div class="tool-card">
+					<span class="tool-icon"><i class="fas fa-database"></i></span>
+					<div class="tool-meta">Web resource</div>
+					<h3>Fungal ICS BGC browser</h3>
+					<p>A public website for exploring and downloading the more than 3,800 isocyanide synthase biosynthetic gene clusters identified across the fungal kingdom, built alongside my <em>Nucleic Acids Research</em> study.</p>
+					<div class="tool-foot">
+						<a href="https://isocyanides.fungi.wisc.edu/" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Open the browser</a>
+						<a href="https://doi.org/10.1093/nar/gkad573" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fas fa-book"></i> Paper</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===================== Publications ===================== -->
+	<section id="publications" class="section-alt">
+		<div class="wrap">
+			<div class="section-head">
+				<p class="eyebrow">Publications</p>
+				<h2>Selected work</h2>
+				<p>A selection of recent first-author work. For the complete, up-to-date list and citation metrics, see my Google Scholar profile.</p>
+			</div>
+
+			<div class="pub-list">
+				<!-- Amanita -->
+				<article class="pub reveal">
+					<div class="yr">2026</div>
+					<div>
+						<div class="pub-title">Equipped for success: genomes and metabolomes of the European <em>Amanita muscaria</em> are conserved in its novel South African range</div>
+						<div class="authors"><b>Nickles GR</b>, Stokes CK, Narh DL, <em>et al.</em>, Drott MT, Pringle A.</div>
+						<div class="venue"><em>New Phytologist</em> <strong>250</strong>, 1863–1883.</div>
+						<div class="pub-tags">
+							<a class="tag-doi" href="https://doi.org/10.1111/nph.71064" target="_blank" rel="noopener">DOI: 10.1111/nph.71064</a>
+							<a class="tag-pdf" href="paper_pdfs/Nickles_2026_Amanita_muscaria_NewPhytologist.pdf" target="_blank">PDF</a>
+							<span class="tag-oa">Open Access</span>
+						</div>
+					</div>
+				</article>
+
+				<!-- Lichen (in press) -->
+				<article class="pub reveal">
+					<div class="yr">2026</div>
+					<div>
+						<div class="pub-title">Reconstructing the evolution of a key fungal isocyanide megasynthase using genomes of lichenized fungi</div>
+						<div class="authors"><b>Nickles GR</b>, <em>et al.</em></div>
+						<div class="venue">Accepted at <em>Current Biology</em>, in press (expected June 2026).</div>
+						<div class="pub-tags">
+							<span class="tag-status">In press</span>
+							<a class="tag-pdf" href="paper_pdfs/ssrn-5371150.pdf" target="_blank">Preprint PDF</a>
+						</div>
+					</div>
+				</article>
+
+				<!-- ICS -->
+				<article class="pub reveal">
+					<div class="yr">2023</div>
+					<div>
+						<div class="pub-title">Mining for a new class of fungal natural products: the evolution, diversity, and distribution of isocyanide synthase biosynthetic gene clusters</div>
+						<div class="authors"><b>Nickles GR</b>, Oestereicher B, Keller NP, Drott MT.</div>
+						<div class="venue"><em>Nucleic Acids Research</em> <strong>51</strong>(14), 7220–7235.</div>
+						<div class="pub-tags">
+							<a class="tag-doi" href="https://doi.org/10.1093/nar/gkad573" target="_blank" rel="noopener">DOI: 10.1093/nar/gkad573</a>
+							<a class="tag-pdf" href="paper_pdfs/gkad573.pdf" target="_blank">PDF</a>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			<div class="scholar-cta">
+				<a href="https://scholar.google.com/citations?user=rayavZUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Full list on Google Scholar</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===================== Contact ===================== -->
+	<section id="contact">
+		<div class="wrap">
+			<div class="section-head">
+				<p class="eyebrow">Contact &amp; CV</p>
+				<h2>Get in touch</h2>
+				<p>I'm always interested in collaborations on fungal natural product biosynthesis and evolution. Reach out anytime.</p>
+			</div>
+
+			<div class="contact-grid">
+				<div class="contact-card">
+					<div class="contact-block">
+						<h4><i class="fas fa-envelope"></i> Email</h4>
+						<p><a href="mailto:gnickles@wisc.edu">gnickles@wisc.edu</a></p>
+						<p><a href="mailto:gnick317@gmail.com">gnick317@gmail.com</a></p>
+					</div>
+					<div class="contact-block">
+						<h4><i class="fas fa-share-alt"></i> Around the web</h4>
+						<div class="social-row">
+							<a href="https://scholar.google.com/citations?user=rayavZUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+							<a href="https://orcid.org/0000-0002-0234-8049" target="_blank" rel="noopener" title="ORCID"><i class="fab fa-orcid"></i></a>
+							<a href="https://github.com/gnick18" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+							<a href="https://www.linkedin.com/in/grant-nickles/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+							<a href="https://www.researchgate.net/profile/Grant_Nickles" target="_blank" rel="noopener" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+							<a href="https://bsky.app/profile/grantnickles.bsky.social" target="_blank" rel="noopener" title="Bluesky"><i class="fas fa-cloud"></i></a>
+						</div>
+					</div>
+					<div class="contact-block">
+						<h4><i class="fas fa-users"></i> Memberships</h4>
+						<p>Member, Genetics Society of America (GSA)</p>
 					</div>
 				</div>
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<div class="row" style="align-items: center; margin-bottom: 2em;">
-								<!-- Profile Image and Info - Left Side -->
-								<div class="col-5" style="text-align: center;">
-									<img src="images/grant_nickles.png" alt="Headshot of Grant Nickles" style="border-radius: 50%; width: 280px; height: 280px; object-fit: cover; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); margin-bottom: 1.5em;" />
-									<h1 style="margin-bottom: 0.5em;">Grant R. Nickles, PhD</h1>
-									<p style="font-size: 1em; margin-bottom: 0.5em;">UW Distinguished Research Fellow <br>
-										<a href="https://rise.wisc.edu/" target="_blank">Wisconsin Research, Innovation and Scholarly Excellence (RISE) AI</a>
-									</p>
-									<p style="font-size: 1em; margin-bottom: 0;"><a href="https://cals.wisc.edu/" target="_blank">College of Agriculture and Life Sciences <br> at The University of Wisconsin-Madison</a>
-									</p>
-								</div>
-								<!-- Academic Pedigree Card - Right Side -->
-								<div class="col-7">
-									<div class="pedigree-card" style="background: rgba(255, 255, 255, 0.98); border-radius: 12px; padding: 2em; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); border: 1px solid rgba(0, 0, 0, 0.08);">
-										<h3 class="pedigree-title" style="margin-top: 0; margin-bottom: 1.2em; font-size: 1.4em; color: #2c3e50 !important; border-bottom: 2px solid #3498db; padding-bottom: 0.5em;">
-											<i class="fas fa-graduation-cap" style="margin-right: 0.5em;"></i>Academic Pedigree
-										</h3>
-										
-										<!-- Postdoc -->
-										<div style="margin-bottom: 1.5em; padding-left: 1.2em; border-left: 3px solid #3498db;">
-											<h4 class="pedigree-heading" style="margin: 0 0 0.4em 0; font-size: 1.1em; color: #2c3e50 !important;">Postdoc</h4>
-											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 1em; font-weight: 600; color: #34495e !important;">University of Wisconsin-Madison</p>
-											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 0.95em; color: #7f8c8d !important;">2025-Present</p>
-											<p class="pedigree-text" style="margin: 0; font-size: 0.95em; color: #333 !important;">Research under <a href="https://fungi.cals.wisc.edu/" target="_blank" style="color: #2980b9 !important;">Dr. Emile Gluck-Thaler</a><br><em style="color: #555 !important;">Fungal Interactions Lab</em></p>
-										</div>
-										
-										<!-- PhD -->
-										<div style="margin-bottom: 1.5em; padding-left: 1.2em; border-left: 3px solid #9b59b6;">
-											<h4 class="pedigree-heading" style="margin: 0 0 0.4em 0; font-size: 1.1em; color: #2c3e50 !important;">M.S. & Ph.D.</h4>
-											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 1em; font-weight: 600; color: #34495e !important;">University of Wisconsin-Madison</p>
-											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 0.95em; color: #7f8c8d !important;">2020-2025</p>
-											<p class="pedigree-text" style="margin: 0; font-size: 0.95em; color: #333 !important;">Research under <a href="https://sites.google.com/view/kellerlabuw/keller-lab-home" target="_blank" style="color: #2980b9 !important;">Dr. Nancy P. Keller</a></p>
-										</div>
-										
-										<!-- BS -->
-										<div style="padding-left: 1.2em; border-left: 3px solid #e74c3c;">
-											<h4 class="pedigree-heading" style="margin: 0 0 0.4em 0; font-size: 1.1em; color: #2c3e50 !important;">B.S.</h4>
-											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 1em; font-weight: 600; color: #34495e !important;">Iowa State University</p>
-											<p class="pedigree-text" style="margin: 0 0 0.3em 0; font-size: 0.95em; color: #7f8c8d !important;">2016-2020</p>
-											<p class="pedigree-text" style="margin: 0; font-size: 0.95em; color: #333 !important;">Research under <a href="https://www.maize-surface-lipids.gdcb.iastate.edu/" target="_blank" style="color: #2980b9 !important;">Dr. Marna Yandeau-Nelson</a></p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<ul class="actions" style="text-align: center;">
-								<li><a href="#one" class="button primary scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- One -->
-					<section id="one" class="wrapper fade-up" style="background-color: #ffffff;">
-						<div class="inner">
-							<h2 style="font-size: 2.5em;">Research Projects</h2>
-						</div>
-					</section>
-					
-					<!-- Research Section 1: Non-canonical metabolism -->
-					<section class="wrapper style2 fade-up">
-						<div class="inner">
-							<h3 style="font-size: 1.2em;">Exploring the evolution and genomic architecture of non-canonical fungal specialized metabolism</h3>
-							<p style="font-size: 0.9em; margin-bottom: 2em;">I am interested in studying non-canonical fungal specialized metabolism which broadly encompasses: (i) natural products whose genetic basis is poorly understood or unpredictable by conventional genome mining, and (ii) taxa who have been conventionally understudied or ignored by natural product researchers (e.g., Basidiomycetes, lichens).</p>
-							
-							<div class="box alt">
-								<div class="row gtr-uniform">
-									<div class="col-4">
-										<span class="image fit">
-											<img src="images/ICSOnTree_Final.png" alt="Mining for isocyanide synthase BGCs" />
-										</span>
-										<h4>Mining for a new class of fungal natural products</h4>
-										<p><button onclick="openModal('modal1')" class="button">Read More</button></p>
-									</div>
-									<div class="col-4">
-										<span class="image fit">
-											<img src="images/ProposedEvolutionaryNRPSSteps.png" alt="Reconstructing isocyanide megasynthase evolution" />
-										</span>
-										<h4>Unconvering the stepwise evolution of a fungal mega-synthase with the help of lichen genomes</h4>
-										<p><button onclick="openModal('modal2')" class="button">Read More</button></p>
-									</div>
-									<div class="col-4">
-										<span class="image fit">
-											<img src="images/Figure4.png" alt="Amanita muscaria genomes and metabolomes" />
-										</span>
-										<h4>The invasion of Amanita muscaria in South Africa</h4>
-										<p><button onclick="openModal('modal3')" class="button">Read More</button></p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					
-					<!-- Research Section 2: Aspergillus -->
-					<section class="wrapper style3 fade-up">
-						<div class="inner">
-							<div style="display: flex; align-items: center; gap: 2em; margin-bottom: 1em;">
-								<img src="images/logo.png" alt="Aspergillus fumigatus Community Sequencing Initiative Logo" style="max-width: 160px; height: auto; flex-shrink: 0;" />
-								<div style="flex: 1;">
-									<h3 style="font-size: 1.2em; margin-top: 0;">Aspergillus fumigatus Af293/CEA10 Community Sequencing Initiative</h3>
-								</div>
-							</div>
-							<p style="font-size: 0.9em;">The model pathogen <em>A. fumigatus</em> (strains Af293 and CEA10) has been used by researchers for decades. As these strains were cultured independently in labs across the globe, they have inevitably accumulated unique, unstudied mutations. This "lab-to-lab" evolution makes it difficult to compare findings on physiology, pathogenicity, and genetics.</p>
-							<p style="font-size: 0.9em;">While community sequencing projects are common for other model organisms (like <em>Arabidopsis</em>, <em>S. cerevisiae</em>, and various bacteria), this effort is the first of its kind for a filamentous fungus. We believe <em>A. fumigatus</em> is the perfect model pathogen to pioneer this work. This is a global collaboration that we hope will provide a foundational genomic resource for the entire <em>Aspergillus</em> community for years to come.</p>
-							<p style="font-size: 0.9em;">I launched the <em>Aspergillus fumigatus</em> Community Sequencing Initiative in collaboration with Dr. Amelia Barber, Dr. Emile Gluck-Thaler, and Dr. Dante Calise. We founded this project on the principle that reliable, comparable data is crucial for scientific communities.</p>
-							
-							<p style="margin-top: 2em;"><a href="https://asp-fumi-seq-project-2025.vercel.app/" target="_blank" class="button primary">Visit Project Website</a></p>
-						</div>
-					</section>
-					
-					<!-- Research Section 3: PFAS -->
-					<section class="wrapper style2-alt fade-up">
-						<div class="inner">
-							<h3 style="font-size: 1.2em;">Creating tools to study the metabolisms of mixed microbial communities</h3>
-							<p style="font-size: 0.9em;">The core aim of my work is to expand our understanding of the chemical interplay that occurs in mixed (fungal and bacterial) microbial communities. Toward this, I am developing two parallel approaches: running large-scale in silico protein docking experiments to identify candidate enzymes, and generating new, stable model fungal-bacterial communities whose collective metabolomes can be studied in a lab setting.</p>
-							<p style="font-size: 0.9em;">I believe any viable microbial bioremediation strategy will ultimately involve the collective catabolic capabilities of many microbes working in concert. I hope to later build on the foundations of my model mixed microbial communities toward engineering consortia that can target and degrade specific chemicals.</p>
-							<p><a href="#two" class="button primary">Get in Touch</a></p>
-						</div>
-					</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Contact & CV</h2>
-							<p style="font-size: 0.95em;">I'm always interested in discussing collaborations on fungal natural product biosynthesis and evolution. Feel free to reach out!</p>
-							
-							<div class="row">
-								<div class="col-4">
-									<h3 style="font-size: 1.1em;">Get in Touch</h3>
-									<ul class="contact">
-										<li>
-											<h3 style="font-size: 1em;">Email</h3>
-											<p style="font-size: 0.9em;">
-											gnickles&#64;wisc&#46;edu<br>
-											gnick317&#64;gmail&#46;com
-											</p>
-										</li>
-										<li>
-											<h3 style="font-size: 1em;">Connect with me</h3>
-											<ul class="icons" style="display: flex; flex-direction: column; gap: 0.5em; align-items: flex-start;">
-												<li style="display: flex; align-items: center; width: 100%;"><a href="https://www.linkedin.com/in/grant-nickles/" target="_blank" class="icon brands fa-linkedin-in" style="font-size: 1.3em; margin-right: 0.5em;"><span class="label">LinkedIn</span></a><span style="font-size: 0.9em;">LinkedIn</span></li>
-												<li style="display: flex; align-items: center; width: 100%;"><a href="https://github.com/gnick18" target="_blank" class="icon brands fa-github" style="font-size: 1.3em; margin-right: 0.5em;"><span class="label">GitHub</span></a><span style="font-size: 0.9em;">GitHub</span></li>
-												<li style="display: flex; align-items: center; width: 100%;"><a href="https://www.researchgate.net/profile/Grant_Nickles" target="_blank" class="icon brands fa-researchgate" style="font-size: 1.3em; margin-right: 0.5em;"><span class="label">Research Gate</span></a><span style="font-size: 0.9em;">ResearchGate</span></li>
-												<li style="display: flex; align-items: center; width: 100%;"><a href="https://orcid.org/0000-0002-0234-8049" target="_blank" class="icon brands fa-orcid" style="font-size: 1.3em; margin-right: 0.5em;"><span class="label">OrcID</span></a><span style="font-size: 0.9em;">OrcID</span></li>
-												<li style="display: flex; align-items: center; width: 100%;"><a href="https://bsky.app/profile/grantnickles.bsky.social" target="_blank" style="font-size: 1.3em; margin-right: 0.5em;">🦋</a><span style="font-size: 0.9em;">Bluesky</span></li>
-											</ul>
-										</li>
-										<li style="margin-top: 1.5em;">
-											<h3 style="font-size: 1em;">Publications & Citations</h3>
-											<p style="margin-bottom: 1em; font-size: 0.9em;">View my complete publication list and citation metrics on Google Scholar.</p>
-											<a href="https://scholar.google.com/citations?user=rayavZUAAAAJ&hl=en&oi=ao" target="_blank" class="button primary">View Google Scholar Profile</a>
-										</li>
-										<li style="margin-top: 1.5em;">
-											<h3 style="font-size: 1em;">Scientific Community Memberships</h3>
-											<p style="font-size: 0.9em;">Member of the Genetics Society of America (GSA)</p>
-										</li>
-									</ul>
-								</div>
-								<div class="col-8">
-									<h3 style="font-size: 1.1em;">Curriculum Vitae</h3>
-									<p style="margin-bottom: 1em; font-size: 0.9em;">Last updated: November, 2025</p>
-									<iframe src="images/GrantN_CV_Nov2025.pdf" width="100%" height="800px" style="border: 1px solid #ddd; border-radius: 0.25em;"></iframe>
-									<p style="margin-top: 1em;"><a href="images/GrantN_CV_Nov2025.pdf" target="_blank" class="button primary">Download CV (PDF)</a></p>
-								</div>
-							</div>
-						</div>
-					</section>
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper" style="background-color: #2c3e50; padding: 2em 0;">
-				<div class="inner">
-					<ul class="menu">
-						<li style="color: #ecf0f1;">Grant R. Nickles (PhD) 2025</li><li style="color: #ecf0f1;">Designed using open source template on <a href="http://html5up.net" target="_blank" style="color: #ecf0f1; border-bottom-color: rgba(236, 240, 241, 0.35);">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Lightbox for Banner Images -->
-		<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
-			<div class="lightbox-content" onclick="event.stopPropagation()">
-				<span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-				<img id="lightbox-img" src="" alt="Enlarged science photo">
-			</div>
-		</div>
-
-		<!-- Modal 1: ICS Paper -->
-		<div id="modal1" class="modal">
-			<div class="modal-content">
-				<div class="modal-header">
-					<span class="close" onclick="closeModal('modal1')">&times;</span>
-					<h2>Mining for a new class of fungal natural products: the evolution, diversity, and distribution of isocyanide synthase biosynthetic gene clusters</h2>
-				</div>
-				<div class="modal-body">
-					<h3>Scientific Summary</h3>
-					<p>My work provided the first large-scale characterization of isocyanide synthase (ICS) biosynthetic gene clusters (BGCs), a class of fungal natural products previously invisible to conventional genome mining. I developed a new computational pipeline that located over 3,800 ICS BGCs, establishing them as the fifth largest class of specialized metabolites in fungi.</p>
-					<p>Our results, which included a full evolutionary analysis and the creation of a public web resource, provided a roadmap for future research. As a direct result of this work, the antiSMASH team incorporated detection of ICS BGCs into version 7.1.</p>
-				</div>
-				<div class="modal-footer">
-					<a href="paper_pdfs/gkad573.pdf" target="_blank" class="button primary">Read Full Paper (PDF)</a>
-					<button onclick="closeModal('modal1')" class="button">Close</button>
+				<div>
+					<div class="cv-head">
+						<h3 style="margin:0;">Curriculum Vitae</h3>
+						<span class="updated">Last updated November 2025</span>
+					</div>
+					<iframe class="cv-frame" src="images/GrantN_CV_Nov2025.pdf" title="Curriculum Vitae of Grant R. Nickles"></iframe>
+					<p style="margin-top:1rem;"><a href="images/GrantN_CV_Nov2025.pdf" target="_blank" class="btn btn-ghost"><i class="fas fa-download"></i> Download CV (PDF)</a></p>
 				</div>
 			</div>
 		</div>
+	</section>
 
-		<!-- Modal 2: Lichen Paper -->
-		<div id="modal2" class="modal">
-			<div class="modal-content">
-				<div class="modal-header">
-					<span class="close" onclick="closeModal('modal2')">&times;</span>
-					<h2>Reconstructing the evolution of a key fungal isocyanide megasynthase using genomes of lichenized fungi</h2>
-					<div class="status">Preprint - Currently under review</div>
-				</div>
-				<div class="modal-body">
-					<h3>Scientific Summary</h3>
-					<p>My work uncovered an abnormal "split" version of a known, antibiotic-producing isocyanide-NRPS mega-synthase (named CrmA) within lichen genomes. In this version, the domains that make up the mega-synthase are encoded by two separate genes (the ICS component is separate from the NRPS component).</p>
-					<p>We went on to show this split metabolic pathway is present in a wide range of fungi (not just lichens) and is functionally redundant with its fused counterpart. I traced the evolutionary origins of the NRPS-like domains to a duplication event of a canonical NRPS-like gene family found within the same fungal genomes.</p>
-					<p>Our work demonstrates how exploring understudied fungal lineages can define new specialized metabolism lineages and reshape our understanding of biosynthetic pathways across the fungal kingdom.</p>
-				</div>
-				<div class="modal-footer">
-					<a href="paper_pdfs/ssrn-5371150.pdf" target="_blank" class="button primary">Read Preprint (PDF)</a>
-					<button onclick="closeModal('modal2')" class="button">Close</button>
-				</div>
-			</div>
+	<!-- ===================== Footer ===================== -->
+	<footer class="footer">
+		<div class="wrap">
+			<span class="sig">Grant R. Nickles, PhD</span>
+			<span>&copy; 2026 · Madison, Wisconsin</span>
 		</div>
+	</footer>
 
-		<!-- Modal 3: Amanita Paper -->
-		<div id="modal3" class="modal">
-			<div class="modal-content">
-				<div class="modal-header">
-					<span class="close" onclick="closeModal('modal3')">&times;</span>
-					<h2>Equipped for success: Genomes and metabolomes of the European Amanita muscaria are conserved in its novel South African range</h2>
-					<div class="status">Unpublished - Early draft available in Grant's Dissertation (Chapter 4)</div>
-				</div>
-				<div class="modal-body">
-					<h3>Scientific Summary</h3>
-					<p>This paper originated from a special, NSF-funded international research workshop in Pretoria, South Africa, in winter 2023. The <em>Amanita muscaria</em> species complex was introduced to South Africa in the context of forestry, but its origins, ecology, and recent evolution remained unstudied.</p>
-					<p>As a part of the workshop, our team sequenced the genomes of 24 Northern and Southern Hemisphere <em>A. muscaria</em>, built phylogenies, and reconstructed its South African history. My major contributions involved analyzing the specialized metabolomes of these mushrooms, using both genome mining and full chemical analysis with liquid chromatography-mass spectrometry (LC-MS/MS). I also led collaborations to test a panel of <em>A. muscaria</em> extracts against eight different organisms (including bacteria, nematodes, and insects).</p>
-					<p>The results of this paper are not printed but we hope it to be soon!</p>
-				</div>
-				<div class="modal-footer">
-					<a href="https://www.proquest.com/openview/c23d63069f0d717ff649c259cbac4794/1?pq-origsite=gscholar&cbl=18750&diss=y" target="_blank" class="button primary">View Dissertation Chapter</a>
-					<button onclick="closeModal('modal3')" class="button">Close</button>
-				</div>
-			</div>
-		</div>
+	<!-- ===================== Lightbox ===================== -->
+	<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+		<span class="lb-close">&times;</span>
+		<img id="lightboxImg" src="" alt="Enlarged photo" />
+	</div>
 
-		<script>
-			function openModal(modalId) {
-				document.getElementById(modalId).style.display = "block";
-				document.body.style.overflow = "hidden";
-			}
+	<!-- ===================== Scripts ===================== -->
+	<script>
+		// --- Nav: shadow on scroll + mobile toggle ---
+		var nav = document.getElementById('nav');
+		window.addEventListener('scroll', function () {
+			nav.classList.toggle('scrolled', window.scrollY > 12);
+		});
+		var navToggle = document.getElementById('navToggle');
+		var navLinks = document.getElementById('navLinks');
+		navToggle.addEventListener('click', function () { navLinks.classList.toggle('open'); });
+		navLinks.addEventListener('click', function (e) {
+			if (e.target.tagName === 'A') navLinks.classList.remove('open');
+		});
 
-			function closeModal(modalId) {
-				document.getElementById(modalId).style.display = "none";
-				document.body.style.overflow = "auto";
-			}
-
-			// Close modal when clicking outside of it
-			window.onclick = function(event) {
-				if (event.target.classList.contains('modal')) {
-					event.target.style.display = "none";
-					document.body.style.overflow = "auto";
-				}
-			}
-
-			// Lightbox functions for banner images
-			function openLightbox(imgSrc) {
-				var lightbox = document.getElementById('lightbox');
-				var lightboxImg = document.getElementById('lightbox-img');
-				lightboxImg.src = imgSrc;
-				lightbox.classList.add('active');
-				document.body.style.overflow = 'hidden';
-			}
-
-			function closeLightbox() {
-				var lightbox = document.getElementById('lightbox');
-				lightbox.classList.remove('active');
-				document.body.style.overflow = 'auto';
-			}
-
-			// Load banner images from manifest.json
-			function loadBannerImages() {
-				var bannerTrack = document.getElementById('banner-track');
-				
-				fetch('images/pinwheel/manifest.json')
-					.then(function(response) {
-						return response.json();
-					})
-					.then(function(data) {
-						var images = data.images;
-						var basePath = 'images/pinwheel/';
-						
-						// Add original images
-						images.forEach(function(imageName) {
-							var img = document.createElement('img');
-							img.src = basePath + imageName;
-							img.alt = 'Science photo';
-							img.addEventListener('click', function() {
-								openLightbox(this.src);
-							});
-							bannerTrack.appendChild(img);
-						});
-						
-						// Add duplicate set for seamless infinite scroll
-						images.forEach(function(imageName) {
-							var img = document.createElement('img');
-							img.src = basePath + imageName;
-							img.alt = 'Science photo';
-							img.addEventListener('click', function() {
-								openLightbox(this.src);
-							});
-							bannerTrack.appendChild(img);
-						});
-					})
-					.catch(function(error) {
-						console.log('Error loading banner images:', error);
-					});
-			}
-
-			// Initialize on page load
-			document.addEventListener('DOMContentLoaded', function() {
-				loadBannerImages();
-
-				// Close lightbox with Escape key
-				document.addEventListener('keydown', function(e) {
-					if (e.key === 'Escape') {
-						closeLightbox();
+		// --- Photo band: load from manifest, duplicate for seamless loop ---
+		(function () {
+			var track = document.getElementById('bandTrack');
+			fetch('images/pinwheel/manifest.json')
+				.then(function (r) { return r.json(); })
+				.then(function (data) {
+					var base = 'images/pinwheel/';
+					function add(name) {
+						var img = document.createElement('img');
+						img.src = base + name;
+						img.alt = 'Photo from the field or lab';
+						img.loading = 'lazy';
+						img.addEventListener('click', function () { openLightbox(this.src); });
+						track.appendChild(img);
 					}
+					data.images.forEach(add);
+					data.images.forEach(add); // duplicate set
+				})
+				.catch(function (e) { console.log('Banner load error:', e); });
+		})();
+
+		// --- Lightbox ---
+		function openLightbox(src) {
+			document.getElementById('lightboxImg').src = src;
+			document.getElementById('lightbox').classList.add('open');
+			document.body.style.overflow = 'hidden';
+		}
+		function closeLightbox() {
+			document.getElementById('lightbox').classList.remove('open');
+			document.body.style.overflow = '';
+		}
+
+		// --- Close lightbox on Escape ---
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape') { closeLightbox(); }
+		});
+
+		// --- Reveal on scroll ---
+		(function () {
+			var els = document.querySelectorAll('.reveal');
+			if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in'); }); return; }
+			var obs = new IntersectionObserver(function (entries) {
+				entries.forEach(function (en) {
+					if (en.isIntersecting) { en.target.classList.add('in'); obs.unobserve(en.target); }
 				});
-			});
-		</script>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+			}, { threshold: 0.12 });
+			els.forEach(function (el) { obs.observe(el); });
+		})();
+	</script>
+</body>
 </html>
