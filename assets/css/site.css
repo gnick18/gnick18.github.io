@@ -303,7 +303,7 @@ section.tight { padding: 4rem 0; }
 .paper-rows { margin-top: 2.4rem; }
 .paper-row {
 	display: grid; grid-template-columns: 1.05fr 1fr; gap: 3rem; align-items: center;
-	padding: 2.8rem 0; border-top: 1px solid var(--line);
+	padding: 2.8rem 0; border-top: 1px solid var(--line-strong);
 }
 .paper-row:first-child { border-top: 0; padding-top: 1.4rem; }
 .paper-row.reverse .paper-fig { order: 2; }
