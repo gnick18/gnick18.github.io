@@ -399,6 +399,23 @@ section.tight { padding: 4rem 0; }
 @media (max-width: 860px) { .tools-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
+   Fellowships & honors
+   ============================================================ */
+.awards-list { display: flex; flex-direction: column; margin-top: 1rem; }
+.award {
+	display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: baseline;
+	padding: 1.25rem 0; border-bottom: 1px solid var(--line);
+}
+.award:last-child { border-bottom: 0; }
+.award .a-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 540; color: var(--ink); line-height: 1.25; }
+.award .a-funder { font-size: .93rem; color: var(--ink-soft); margin-top: .2rem; }
+.award .a-year { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; color: var(--forest); white-space: nowrap; }
+@media (max-width: 680px) {
+	.award { grid-template-columns: 1fr; gap: .3rem; }
+	.award .a-year { font-size: .9rem; }
+}
+
+/* ============================================================
    Publications list
    ============================================================ */
 .pub-list { display: flex; flex-direction: column; gap: 1.2rem; counter-reset: pub; }
@@ -433,7 +450,7 @@ section.tight { padding: 4rem 0; }
 /* ============================================================
    Contact
    ============================================================ */
-.contact-grid { display: grid; grid-template-columns: 360px 1fr; gap: 3rem; align-items: start; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: stretch; }
 .contact-card {
 	background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
 	padding: 1.8rem; box-shadow: var(--shadow-sm);
@@ -445,12 +462,18 @@ section.tight { padding: 4rem 0; }
 .contact-block p { font-size: .95rem; color: var(--ink-soft); margin-bottom: .4rem; }
 .contact-block a { word-break: break-word; }
 
-.cv-frame {
-	width: 100%; height: 760px; border: 1px solid var(--line);
-	border-radius: var(--radius); box-shadow: var(--shadow-sm); background: var(--card);
+.cv-panel {
+	background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+	padding: 2rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; align-items: flex-start;
 }
-.cv-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; }
-.cv-head .updated { font-size: .85rem; color: var(--ink-faint); }
+.cv-panel .cv-icon {
+	width: 52px; height: 52px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center;
+	background: rgba(184,132,43,.14); color: var(--spore); font-size: 1.4rem; margin-bottom: 1.1rem;
+}
+.cv-panel h3 { font-size: 1.4rem; margin: 0 0 .25rem; }
+.cv-panel .cv-updated { font-size: .85rem; color: var(--ink-faint); margin: 0 0 1.1rem; }
+.cv-panel p { font-size: .96rem; color: var(--ink-soft); margin: 0 0 1.6rem; }
+.cv-panel .btn { margin-top: auto; }
 
 /* ============================================================
    Footer
