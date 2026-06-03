@@ -85,6 +85,12 @@ section.tight { padding: 4rem 0; }
 
 .section-alt { background: var(--paper-alt); }
 
+/* Research: each theme sits in its own full-width color band */
+#research { padding: 0; }
+.research-band { padding: 4rem 0; background: var(--paper); }
+.research-band.band-alt { background: #ebe0ca; }
+.research-band .theme { margin-bottom: 0; }
+
 .eyebrow {
 	font-family: var(--font-body);
 	font-size: .78rem;
