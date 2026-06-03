@@ -258,6 +258,7 @@ section.tight { padding: 4rem 0; }
    About + academic timeline
    ============================================================ */
 .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3.5rem; align-items: start; }
+.about-prose { max-width: 760px; }
 .about-prose p { font-size: 1.08rem; color: var(--ink-soft); }
 .about-prose p:first-of-type::first-letter {
 	font-family: var(--font-display); font-size: 3.4rem; line-height: .8;
@@ -286,6 +287,33 @@ section.tight { padding: 4rem 0; }
 .tl-org { font-size: .95rem; color: var(--ink-soft); margin: .1rem 0; }
 .tl-years { font-size: .82rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: .06em; }
 .tl-advisor { font-size: .9rem; margin-top: .15rem; }
+
+/* Journey map ("How I got here") — academic spine with branching detours */
+.journey { position: relative; max-width: 720px; margin: 1.6rem 0 0; padding-left: 30px; }
+.journey::before { content:""; position:absolute; left:8px; top:14px; bottom:14px; width:3px; background: var(--forest); border-radius:2px; }
+.journey-row { position: relative; margin-bottom: 1.5rem; }
+.journey-row:last-child { margin-bottom: 0; }
+.journey-row .jnode { position:absolute; left:-30px; top:7px; width:18px; height:18px; border-radius:50%; background:var(--c); border:3px solid var(--paper); box-shadow:0 0 0 2px var(--c); }
+.journey-card { background: var(--card); border:1px solid var(--line); border-radius:12px; padding:1rem 1.2rem; box-shadow: var(--shadow-sm); }
+.journey-row.detour { margin-left: 150px; }
+.journey-row.detour .jnode { left:-180px; background: var(--paper); border:3px dashed var(--c); box-shadow:none; }
+.journey-row.detour::before { content:""; position:absolute; left:-172px; top:15px; width:164px; border-top:2px dashed var(--c); }
+.journey-row.detour .journey-card { border-style:dashed; border-color:var(--c); background:var(--c-bg); }
+.journey-yr { font-family: var(--font-display); font-weight:600; color: var(--spore); font-size:.9rem; }
+.journey-card h4 { font-size:1.05rem; line-height:1.25; margin:.2rem 0 .15rem; }
+.journey-place { font-size:.86rem; color: var(--ink-soft); }
+.journey-place a { color: var(--forest); border-bottom:1px solid var(--line-strong); }
+.journey-place a:hover { color: var(--spore); }
+.journey-tag { display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:.24rem .55rem; border-radius:5px; margin-top:.55rem; color:var(--c); background:var(--c-bg); }
+.cat-academic { --c:#38583f; --c-bg:rgba(56,88,63,.12); }
+.cat-industry { --c:#b9842b; --c-bg:rgba(184,132,43,.16); }
+.cat-venture  { --c:#a4552c; --c-bg:rgba(164,85,44,.12); }
+.cat-field    { --c:#6f8b58; --c-bg:rgba(111,139,88,.16); }
+@media (max-width: 680px) {
+	.journey-row.detour { margin-left: 0; }
+	.journey-row.detour .jnode { left:-30px; }
+	.journey-row.detour::before { display:none; }
+}
 
 /* ============================================================
    Research themes
