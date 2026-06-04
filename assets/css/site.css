@@ -512,6 +512,30 @@ section.tight { padding: 4rem 0; }
 .cv-panel p { font-size: .96rem; color: var(--ink-soft); margin: 0 0 1.6rem; }
 .cv-panel .btn { margin-top: auto; }
 
+/* Compact contact bar — three columns in one card */
+.contact-bar {
+	display: grid; grid-template-columns: repeat(3, 1fr);
+	background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+	box-shadow: var(--shadow-sm); overflow: hidden; margin-top: .5rem;
+}
+.cb-col { padding: 1.9rem 2rem; }
+.cb-col + .cb-col { border-left: 1px solid var(--line); }
+.cb-col h4 { font-size: 1rem; display: flex; align-items: center; gap: .5rem; margin: 0 0 .7rem; }
+.cb-col h4 i { color: var(--spore); }
+.cb-col .cb-sub { margin-top: 1.7rem; }
+.cb-col p { font-size: .95rem; color: var(--ink-soft); margin: 0 0 .4rem; }
+.cb-col .cv-updated { font-size: .85rem; color: var(--ink-faint); margin: 0 0 1.1rem; }
+.cb-col .btn { margin-top: .2rem; }
+.cb-col .social-row { gap: .5rem; }
+.cb-col .social-row a { width: 38px; height: 38px; font-size: 1rem; }
+@media (max-width: 760px) {
+	.contact-bar { grid-template-columns: 1fr; }
+	.cb-col { padding: 1.6rem 1.5rem; }
+	.cb-col + .cb-col { border-left: 0; border-top: 1px solid var(--line); }
+	.cb-col .social-row { gap: .45rem; }
+	.cb-col .social-row a { width: 36px; height: 36px; }
+}
+
 /* ============================================================
    Footer
    ============================================================ */
